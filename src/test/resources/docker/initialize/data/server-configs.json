@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 XEBIALABS
+ * Copyright 2018 XEBIALABS
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -10,32 +10,11 @@
 [
   {
     "id": "Configuration/Custom/Configuration2139582",
-    "type": "host.Unix",
-    "address": "python-selenium",
-    "title": "python-selenium",
-    "connectionType": "SUDO",
-    "password": "xebialabs",
-    "port": 22,
-    "username": "root"    
-  },
-  {
-    "id": "Configuration/Custom/Configuration2139581",
-    "type":"selenium.Profile",
-    "title":"hub-firefox-profile",
-    "password": "xebialabs",
-    "commandExecutor":"http://hub:4444/wd/hub",
-    "desiredCapabilities": {
-        "browserName": "firefox"
-    }
-  },
-  {
-    "id": "Configuration/Custom/Configuration2139583",
-    "type":"selenium.Profile",
-    "title":"hub-chrome-profile",
-    "password": "xebialabs",
-    "commandExecutor":"http://hub:4444/wd/hub",
-    "desiredCapabilities": {
-        "browserName": "chrome"
-    }
+    "type": "sharepoint2010.Server",
+    "url": "http://ec2-54-227-214-3.compute-1.amazonaws.com/",
+    "title": "AWS SharePoint 2010",
+    "password": "oxswenGnpw;",
+    "username": "Administrator",
+    "authenticationMethod":"Ntlm"    
   }
 ]
