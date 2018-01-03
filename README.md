@@ -2,6 +2,8 @@
 
 Alpha workspace
 
+![shared-configuration](images/shared-configuration.png)
+
 # Testing
 This readme assumes familiarity with Amazon EC2. Now, it's possibly that you haven't spun up Amazon EC2 instance before. Go educate yourself and spin up a random Windows box and connect to it so you know how to work Amazon. There's beautiful guide on the interwebz, just Google It (c).
 
