@@ -28,7 +28,7 @@ from org.apache.http.protocol import BasicHttpContext
 
 from com.xebialabs.xlrelease.domain.configuration import HttpConnection
 
-from sharepoint2010.HttpResponse import HttpResponse
+from sharepoint2013.HttpResponse import HttpResponse
 
 class HttpRequest:
     def __init__(self, params, username = None, password = None, domain = None):

@@ -10,10 +10,10 @@
 [
   {
     "id": "Configuration/Custom/Configuration2139582",
-    "type": "sharepoint2010.Server",
-    "url": "http://ec2-54-227-214-3.compute-1.amazonaws.com/",
-    "title": "AWS SharePoint 2010",
-    "password": "oxswenGnpw;",
+    "type": "sharepoint2013.Server",
+    "url": "http://ec2-52-204-51-160.compute-1.amazonaws.com/",
+    "title": "AWS SharePoint 2013",
+    "password": "",
     "username": "Administrator",
     "authenticationMethod":"Ntlm"    
   }

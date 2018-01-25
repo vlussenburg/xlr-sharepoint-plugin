@@ -8,11 +8,9 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-from sharepoint2010.HttpRequest import HttpRequest
-import com.xhaus.jyson.JysonCodec as json
 
-contentType = 'application/json'
-headers = {'Accept' : 'application/json'}
+import sys
+from sharepoint2013.SharepointClient import SharepointClient
 
 # get the configuration properties from the UI
 params = {  'url': configuration.url, 
@@ -26,15 +24,5 @@ params = {  'url': configuration.url,
             'authenticationMethod': configuration.authenticationMethod 
         }
 
-# do an http request to the server
-response = HttpRequest(params).get('/_vti_bin/ListData.svc/Calendar', contentType = 'application/json', headers=headers)
-
-# check response status code, if is different than 200 exit with error code
-if response.status != 200:
-    logger.error("Couldn't establish the connection with server.", response)
-
-responseJson = json.loads(response.response)
-logger.info(str(responseJson))
-
-
-
+client = SharepointClient.create_client(params)
+client.connect()

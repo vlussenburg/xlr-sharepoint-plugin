@@ -13,8 +13,8 @@
            xmlns="http://www.xebialabs.com/deployit/synthetic"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <type type="sharepoint2010.Server" extends="configuration.HttpConnection">
-    	<property name="scriptLocation" default="sharepoint2010/Server.py" hidden="true" />
+    <type type="sharepoint2013.Server" extends="configuration.HttpConnection" description="The Sharepoint2013 server, for example http://company.sharepoint.com/teamsiteabc. This configuration is specific to the team site. If you have multiple team sites, add a server configuration for each site.">
+    	<property name="scriptLocation" default="sharepoint2013/Server.py" hidden="true" />
     	<property name="authenticationMethod" label="Authentication Method" kind="enum" required="true">
             <enum-values>
                 <value>Basic</value>
@@ -23,6 +23,17 @@
             </enum-values>
         </property>
         <property name="domain" label="Domain" description="Domain to be used for NTLM authentication" required="false" />
+    </type>
+
+    <type type="sharepoint2013.AddReleaseToCalendar" extends="xlrelease.PythonScript" description="Add the current release to a SharePoint calendar.">
+        <property name="iconLocation" default="sharepoint2013/SharePointMetroAppTile.png" hidden="true" />
+        <property name="taskColor" hidden="true" default="#0072C6" />
+
+        <property name="server" category="input" label="Server" referenced-type="sharepoint2013.Server" kind="ci" />
+
+        <property name="calendarName" category="input" required="true" description="Calendar in the Sharepoint site to add this release to."/>
+
+        <property name="guid" category="output" description="The GUID (identifier) of the event added." />
     </type>
  
 </synthetic>
